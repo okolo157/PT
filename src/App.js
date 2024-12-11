@@ -1,6 +1,6 @@
 // import Profile from "./Profile";
 import NewCard from "./components/NewCard";
-import "../styles/App.css";
+import "./App.css";
 import Header from "./components/Header";
 
 function App() {

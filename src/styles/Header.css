@@ -1,22 +1,22 @@
-.navbar {
-  display: flex;
-  padding: 40px;
-  flex-direction: row;
-  /* padding: 20px; */
-  /* align-items: center; */
-  justify-content: flex-end;
-  flex-grow: 9;
-  justify-content: start;
-  
-}
-
 .container-new {
   width: 100%;
   /* background-color: yellow; */
   height: 100px;
   display: flex;
   justify-content: center;
-  color: black;
+  align-items: center;
+}
+
+.navbar {
+  flex: 90%;
+  /* background-color: yellow; */
+  margin-left: 40px;
+}
+
+.authContainer {
+  /* background-color: antiquewhite; */
+  flex: 10%;
+  margin-right: 20px;
 }
 
 a {
@@ -27,10 +27,4 @@ a {
 
 a:hover {
   color: brown;
-}
-
-.authContainer {
-  /* background-color: antiquewhite; */
-  flex-grow: 1;
-  align-self: center;
 }
