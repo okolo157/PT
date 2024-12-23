@@ -5,7 +5,6 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Todo from "./pages/Todo";
-import Counter from "./pages/Counter";
 
 import "./App.css";
 
@@ -19,7 +18,6 @@ function App() {
         <Route path="/about" Component={About} />
         <Route path="/todo" Component={Todo} />
         <Route path="/services" Component={Services} />
-        <Route path="/counter" element={<Counter />} />
       </Routes>
     </div>
   );
