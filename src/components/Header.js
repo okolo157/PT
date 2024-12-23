@@ -1,30 +1,34 @@
 import React from "react";
-import "../styles/Header.css";
+import { Link } from "react-router-dom";
 
-function Header() {
+import "../styles/Header.css";
+import logo from "../assets/images/logo.png";
+
+function Header({ one, two, three, four }) {
   return (
     <div className="container-new">
-      <div className="navbar">
-        <a style={{ textDecoration: "none", color: "black" }} href="#home">
-          Home
-        </a>
-        <a style={{ textDecoration: "none", color: "black" }} href="#about">
-          About
-        </a>
-        <a style={{ textDecoration: "none", color: "black" }} href="#services">
-          Services
-        </a>
-        <a style={{ textDecoration: "none", color: "black" }} href="#contact">
-          Contact Us
-        </a>
+      <div className="logoContainer">
+        <img className="image" src={logo} alt="my-logo" />
       </div>
-      <div className="authContainer">
-        <a style={{ textDecoration: "none", color: "black" }} href="#about">
-          Login
-        </a>
-        <a style={{ textDecoration: "none", color: "black" }} href="#services">
-          Signup
-        </a>
+      <div className="navbar">
+        <Link className="items" to="/home">
+          {one}
+        </Link>
+        <Link className="items" to="/about">
+          {two}
+        </Link>
+        <Link className="items" to="/services">
+          {three}
+        </Link>
+        <Link className="items" to="/contact">
+          {four}
+        </Link>
+        <Link className="items" to="/todo">
+          Todo
+        </Link>
+        <Link className="items" to="/counter">
+          Counter
+        </Link>
       </div>
     </div>
   );

@@ -3,20 +3,79 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #fff;
+  /* background-color: #fff; */
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-size: small;
+  font-size: large;
   font-weight: lighter;
-}
-
-.cards {
-  display: flex;
-  flex-direction: row;
-  margin: 20px;
-  /* background-color: yellow; */
+  background-image: url("https://html.dynamiclayers.net/it/alison/img/hero-background.jpg");
 }
 
 .images-container {
   margin: 20px;
+  width: 310px;
+  height: 20%;
+  border-radius: 310px;
+}
+
+.myCards {
+  width: 100%;
+}
+
+.center-text {
+  /* background-color: yellow; */
+  height: 600px;
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: -20px;
+}
+
+.item {
+  margin: 7px;
+  color: white;
+  /* background-color: blue; */
+}
+
+.item1 {
+  font-size: 40px;
+}
+.item2 {
+  font-size: 80px;
+}
+
+.item3 {
+  font-size: 20px;
+  width: 92%;
+  text-align: center;
+}
+
+.itemx {
+  font-size: 40px;
+  color: white;
+  /* margin: 0px; */
+  cursor: pointer;
+  /* background-color: beige; */
+}
+
+.icon-container {
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.itemm1:hover {
+  color: yellow;
+}
+
+.itemm2:hover {
+  color: red;
+}
+
+.itemm3:hover {
+  color: green;
 }

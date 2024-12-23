@@ -1,0 +1,86 @@
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background-color: #d8a300;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner-card {
+  margin-top: 7%;
+  background-color: #fff;
+  height: 60%;
+  width: 80%;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.inner-elements {
+  display: flex;
+  height: 100%;
+}
+
+.text-container {
+  height: 100%;
+  flex: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+}
+
+.text-items {
+  width: 50%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+
+  .items {
+    font-size: 25px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  h1 {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+}
+
+.image-container {
+  height: 100%;
+  flex: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Status-name {
+ 
+}
+
+.info-container {
+  flex-direction: column;
+}
+
+.name {
+ 
+  display: flex;
+  align-items: center;
+ 
+}
+
+.more-info {
+  all: unset;
+  font-size: 22px;
+}

@@ -1,3 +1,6 @@
-
-
+body {
+  /* background-color: aqua; */
+  height: 100px;
+  background-image: url("https://html.dynamiclayers.net/it/alison/img/hero-background.jpg");
+}
 
