@@ -26,9 +26,6 @@ function Header({ one, two, three, four }) {
         <Link className="items" to="/todo">
           Todo
         </Link>
-        <Link className="items" to="/counter">
-          Counter
-        </Link>
       </div>
     </div>
   );
