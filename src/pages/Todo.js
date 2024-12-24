@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDeleteLeft } from "@fortawesome/free-solid-svg-icons";
+import { faDeleteLeft, faEdit } from "@fortawesome/free-solid-svg-icons";
 
 import "../styles/Todo.css";
 
@@ -36,6 +36,24 @@ function Todo() {
     } catch (error) {
       console.error("Error copying to clipboard", error);
     }
+  };
+
+  const handleEditTodo = (item, indexToEdit) => {
+    const itemToEdit = item;
+    setTodos(todos.filter((_, index) => index !== indexToEdit));
+    setTodo(itemToEdit.text);
+  };
+
+  const colors = {
+    Work: "green",
+    Urgent: "red",
+    Personal: "blue",
+    Shopping: "yellow",
+    Health: "pink",
+    Appointments: "orange",
+    Projects: "purple",
+    Delegated: "brown",
+    "Waiting on": "grey",
   };
 
   return (
@@ -104,7 +122,10 @@ function Todo() {
                     </div>
                   </label>
                   <p className="text">
-                    <strong>{item.title}</strong>: {item.text}
+                    <strong style={{ color: colors[item.title] || "black" }}>
+                      {item.title}
+                    </strong>
+                    : {item.text}
                   </p>
                   <div className="icons">
                     <FontAwesomeIcon
@@ -118,6 +139,17 @@ function Todo() {
                         handleDeleteTodo(index);
                       }}
                     />
+                    <FontAwesomeIcon
+                      className="two"
+                      title="Edit item"
+                      icon={faEdit}
+                      size="2x"
+                      color="grey"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleEditTodo(item, index);
+                      }}
+                    />
                   </div>
                 </div>
               </div>
@@ -125,7 +157,6 @@ function Todo() {
           </div>
         </div>
       </div>
-
       {isModalOpen && (
         <div className="modal">
           <div className="modal-content">
@@ -137,7 +168,20 @@ function Todo() {
             <button onClick={() => handleTypeSelect("Shopping")}>
               Shopping
             </button>
-            <button onClick={() => setIsModalOpen(false)}>Cancel</button>
+            <button onClick={() => handleTypeSelect("Health")}>Health</button>
+            <button onClick={() => handleTypeSelect("Urgent")}>Urgent</button>
+            <button onClick={() => handleTypeSelect("Appointments")}>
+              Appointments
+            </button>
+            <button onClick={() => handleTypeSelect("Projects")}>
+              Projects
+            </button>
+            <button onClick={() => handleTypeSelect("Delegated")}>
+              Delegated
+            </button>
+            <button onClick={() => handleTypeSelect("Waiting on")}>
+              Waiting on
+            </button>
           </div>
         </div>
       )}
