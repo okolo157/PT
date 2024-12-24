@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDeleteLeft, faEdit } from "@fortawesome/free-solid-svg-icons";
 
+import Modal from "../components/Modal";
+
 import "../styles/Todo.css";
 
 function Todo() {
@@ -12,6 +14,14 @@ function Todo() {
   const handleAddTodo = () => {
     if (todo.trim()) {
       setIsModalOpen(true);
+    } else {
+      alert("Please enter a todo item.");
+    }
+  };
+
+  const handleEnter = (e) => {
+    if (e.key === "Enter") {
+      handleAddTodo();
     }
   };
 
@@ -85,9 +95,12 @@ function Todo() {
                 }}
                 value={todo}
                 onChange={(e) => setTodo(e.target.value)}
-                placeholder="Add a new todo item"
+                placeholder="Add a new todo item (this app has no database)"
+                onKeyDown={handleEnter}
               />
-              <button onClick={handleAddTodo}>Add</button>
+              <button onClick={handleAddTodo} aria-label="Add todo item">
+                Add
+              </button>
             </div>
           </div>
           <div className="list-items">
@@ -157,34 +170,7 @@ function Todo() {
           </div>
         </div>
       </div>
-      {isModalOpen && (
-        <div className="modal">
-          <div className="modal-content">
-            <h3>Select Todo Type</h3>
-            <button onClick={() => handleTypeSelect("Work")}>Work</button>
-            <button onClick={() => handleTypeSelect("Personal")}>
-              Personal
-            </button>
-            <button onClick={() => handleTypeSelect("Shopping")}>
-              Shopping
-            </button>
-            <button onClick={() => handleTypeSelect("Health")}>Health</button>
-            <button onClick={() => handleTypeSelect("Urgent")}>Urgent</button>
-            <button onClick={() => handleTypeSelect("Appointments")}>
-              Appointments
-            </button>
-            <button onClick={() => handleTypeSelect("Projects")}>
-              Projects
-            </button>
-            <button onClick={() => handleTypeSelect("Delegated")}>
-              Delegated
-            </button>
-            <button onClick={() => handleTypeSelect("Waiting on")}>
-              Waiting on
-            </button>
-          </div>
-        </div>
-      )}
+      {isModalOpen && <Modal handleTypeSelect={handleTypeSelect} />}
     </div>
   );
 }
