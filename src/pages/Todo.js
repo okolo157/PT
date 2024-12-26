@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDeleteLeft, faEdit } from "@fortawesome/free-solid-svg-icons";
+import { ToastContainer, toast } from "react-toastify";
 
 import Modal from "../components/Modal";
 
@@ -10,12 +11,19 @@ function Todo() {
   const [todo, setTodo] = useState("");
   const [todos, setTodos] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isHistoryModalOpen, setIsHistoryModalOpen] = useState(false);
+  const [history, setHistory] = useState([]);
+
+  useEffect(() => {
+    const savedTodos = JSON.parse(localStorage.getItem("todos")) || [];
+    setTodos(savedTodos);
+  }, []);
 
   const handleAddTodo = () => {
     if (todo.trim()) {
       setIsModalOpen(true);
     } else {
-      alert("Please enter a todo item.");
+      toast("Enter a todo item.");
     }
   };
 
@@ -28,30 +36,50 @@ function Todo() {
   const handleTypeSelect = (type) => {
     if (type) {
       const newTodo = { title: type, text: todo };
-      setTodos([...todos, newTodo]);
+      const updatedTodos = [...todos, newTodo];
+      setTodos(updatedTodos);
+      localStorage.setItem("todos", JSON.stringify(updatedTodos));
       setTodo("");
       setIsModalOpen(false);
+      toast.dismiss();
+      toast("Item added successfully");
     }
   };
 
   const handleDeleteTodo = (indexToDelete) => {
-    setTodos(todos.filter((_, index) => index !== indexToDelete));
+    const updatedTodos = todos.filter((_, index) => index !== indexToDelete);
+    setTodos(updatedTodos);
+    // localStorage.setItem("todos", JSON.stringify(updatedTodos));
+    toast.dismiss();
+    toast("Item deleted successfully");
   };
 
-  const copyTodo = async (todoItem) => {
+  const copyTodo = (todoItem) => {
     const txt = todoItem.text;
-    try {
-      await navigator.clipboard.writeText(txt);
-      alert("Todo item copied to clipboard: " + txt);
-    } catch (error) {
-      console.error("Error copying to clipboard", error);
-    }
+    navigator.clipboard.writeText(txt);
+    toast("Todo Item copied: " + txt);
   };
 
   const handleEditTodo = (item, indexToEdit) => {
     const itemToEdit = item;
-    setTodos(todos.filter((_, index) => index !== indexToEdit));
+    const updatedTodos = todos.filter((_, index) => index !== indexToEdit);
+    setTodos(updatedTodos);
+    localStorage.setItem("todos", JSON.stringify(updatedTodos));
     setTodo(itemToEdit.text);
+    toast.dismiss();
+    toast("Edit your todo item and click Add");
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setIsHistoryModalOpen(false);
+    toast.dismiss();
+  };
+
+  const handleModal = () => {
+    const savedTodos = JSON.parse(localStorage.getItem("todos")) || [];
+    setHistory(savedTodos);
+    setIsHistoryModalOpen(true);
   };
 
   const colors = {
@@ -68,6 +96,20 @@ function Todo() {
 
   return (
     <div className="wrapper-todo">
+      <div className="alert">
+        <ToastContainer
+          position="bottom-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick={false}
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
+      </div>
       <div className="up-text">
         <button className="button" data-text="Awesome">
           <span className="actual-text">&nbsp;Todolist&nbsp;</span>
@@ -77,14 +119,16 @@ function Todo() {
         </button>
       </div>
       <div className="todo-box">
+        <div className="link">
+          <h1 style={{ color: "black" }}>
+            Add <br />
+            some Items
+          </h1>
+          <p onClick={handleModal}>View history</p>
+        </div>
         <div className="top-box"></div>
         <div className="bottom-box">
           <div className="input-box">
-            <p>
-              <span style={{ fontWeight: "bold", marginBottom: "-20px" }}>
-                What do you want to do today?
-              </span>
-            </p>
             <div className="elements">
               <input
                 style={{
@@ -95,7 +139,7 @@ function Todo() {
                 }}
                 value={todo}
                 onChange={(e) => setTodo(e.target.value)}
-                placeholder="Add a new todo item (this app has no database)"
+                placeholder="Add a new todo item"
                 onKeyDown={handleEnter}
               />
               <button onClick={handleAddTodo} aria-label="Add todo item">
@@ -108,7 +152,7 @@ function Todo() {
               <div
                 key={index}
                 className="itemz"
-                title="Copy Todo Item"
+                title="Click to copy Todo Item"
                 onClick={() => copyTodo(item)}
               >
                 <div className="input-element">
@@ -116,9 +160,19 @@ function Todo() {
                     className="checkbox-wrapper"
                     onClick={(e) => {
                       e.stopPropagation();
+                      toast("Task completed successfully");
                     }}
+                    title="Task completed"
                   >
-                    <input type="checkbox" />
+                    <input
+                      type="checkbox"
+                      onClick={() => {
+                        toast.dismiss();
+                        handleDeleteTodo(index);
+                        toast.dismiss();
+                        toast("Task completed successfully");
+                      }}
+                    />
                     <div className="checkmark">
                       <svg
                         viewBox="0 0 24 24"
@@ -142,25 +196,25 @@ function Todo() {
                   </p>
                   <div className="icons">
                     <FontAwesomeIcon
-                      className="one"
-                      title="Delete item"
-                      icon={faDeleteLeft}
-                      size="2x"
-                      color="red"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleDeleteTodo(index);
-                      }}
-                    />
-                    <FontAwesomeIcon
                       className="two"
                       title="Edit item"
                       icon={faEdit}
-                      size="2x"
+                      size="1x"
                       color="grey"
                       onClick={(e) => {
                         e.stopPropagation();
                         handleEditTodo(item, index);
+                      }}
+                    />
+                    <FontAwesomeIcon
+                      className="one"
+                      title="Delete item"
+                      icon={faDeleteLeft}
+                      size="1x"
+                      color="red"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleDeleteTodo(index);
                       }}
                     />
                   </div>
@@ -170,7 +224,47 @@ function Todo() {
           </div>
         </div>
       </div>
-      {isModalOpen && <Modal handleTypeSelect={handleTypeSelect} />}
+      {isModalOpen && (
+        <Modal title="Select Todo Type" handleCloseModal={handleCloseModal}>
+          <button onClick={() => handleTypeSelect("Work")}>Work</button>
+          <button onClick={() => handleTypeSelect("Personal")}>Personal</button>
+          <button onClick={() => handleTypeSelect("Shopping")}>Shopping</button>
+          <button onClick={() => handleTypeSelect("Health")}>Health</button>
+          <button onClick={() => handleTypeSelect("Urgent")}>Urgent</button>
+          <button onClick={() => handleTypeSelect("Appointments")}>
+            Appointments
+          </button>
+          <button onClick={() => handleTypeSelect("Projects")}>Projects</button>
+          <button onClick={() => handleTypeSelect("Delegated")}>
+            Delegated
+          </button>
+          <button onClick={() => handleTypeSelect("Waiting on")}>
+            Waiting on
+          </button>
+        </Modal>
+      )}
+
+      {isHistoryModalOpen && (
+        <Modal
+          title="Your Todo List history"
+          handleCloseModal={handleCloseModal}
+        >
+          {history.length > 0 ? (
+            history.map((item, index) => (
+              <div key={index} className="itemz">
+                <p className="text">
+                  <strong style={{ color: colors[item.title] || "black" }}>
+                    {item.title}
+                  </strong>
+                  : {item.text}
+                </p>
+              </div>
+            ))
+          ) : (
+            <p>No history available.</p>
+          )}
+        </Modal>
+      )}
     </div>
   );
 }
