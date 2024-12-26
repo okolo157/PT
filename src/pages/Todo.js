@@ -86,7 +86,7 @@ function Todo() {
     Work: "green",
     Urgent: "red",
     Personal: "blue",
-    Shopping: "yellow",
+    Shopping: "skyblue",
     Health: "pink",
     Appointments: "orange",
     Projects: "purple",
