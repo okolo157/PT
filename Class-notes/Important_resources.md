@@ -27,7 +27,19 @@
 - [NPM](https://npmjs.com)
 - [FontAwesome React Guide](https://docs.fontawesome.com/web/use-with/react)
 
+
 ## Setup Commands
+
+### Font Awesome Import
+```bash
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { icon-name } from "@fortawesome/free-solid-svg-icons"
+OR
+import { icon-name } from "@fortawesome/free-brands-svg-icons"
+
+//Usage
+<FontAwesomeIcon icon={icon-name}/>
+```
 
 ### Node.js Version Check
 ```bash
