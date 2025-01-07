@@ -30,6 +30,18 @@
 
 ## Setup Commands
 
+### Font Awesome Install
+
+```bash
+//Add SVG core
+npm i --save @fortawesome/fontawesome-svg-core
+
+//Add Icon packages
+npm i --save @fortawesome/free-solid-svg-icons
+npm i --save @fortawesome/free-regular-svg-icons
+npm i --save @fortawesome/free-brands-svg-icons
+```
+
 ### Font Awesome Import
 ```bash
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
