@@ -19,7 +19,7 @@
 ## Documentation
 
 ### Official Documentation
-- [Tailwind CSS](https://tailwindcss.com)
+- [Tailwind CSS React](https://tailwindcss.com/docs/guides/create-react-app)
 - [MDN Web Docs](https://developer.mozilla.org/en-US/docs)
 - [Git](https://git-scm.com/)
 - [React](https://react.dev/)
