@@ -33,9 +33,9 @@
 ### Font Awesome Import
 ```bash
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { icon-name } from "@fortawesome/free-solid-svg-icons"
+import { icon-name } from "@fortawesome/free-solid-svg-icons";
 OR
-import { icon-name } from "@fortawesome/free-brands-svg-icons"
+import { icon-name } from "@fortawesome/free-brands-svg-icons";
 
 //Usage
 <FontAwesomeIcon icon={icon-name}/>
