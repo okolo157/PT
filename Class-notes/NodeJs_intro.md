@@ -32,7 +32,7 @@ npm --version
 
 ### Your First Node.js Program
 
-1.Navigate to the folder where you want to create your Node.js project and run the following command to initialize a new project:
+1. Navigate to the folder where you want to create your Node.js project and run the following command to initialize a new project:
 
 ```bash
 npm init -y
