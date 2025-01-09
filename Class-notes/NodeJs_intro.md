@@ -45,7 +45,7 @@ This command will generate a package.json file, which will keep track of the pro
 console.log("Hello, Node.js!");
 ```
 
-Run it using:
+3. Run it using:
 ```bash
 node app.js
 ```
