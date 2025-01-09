@@ -76,6 +76,9 @@ npm install <package-name>
 
 ## Learning Resources
 
+### Full-stack course
+- (https://www.freecodecamp.org/learn/full-stack-developer/)
+
 ### CSS & Layout Tutorials
 - [Flexbox Tutorial](https://youtu.be/tXIhdp5R7sc?si=rnkShUfoZew5KLCc)
 - [CSS Basics](https://youtu.be/i1FeOOhNnwU?si=jG8lbwaPgbb0YH44)
