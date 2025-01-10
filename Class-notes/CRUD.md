@@ -125,6 +125,11 @@ app.delete('/api/books/:id', (req, res) => {
     if (bookIndex === -1) return res.status(404).json({ message: 'Book not found' });
     
     books.splice(bookIndex, 1);
+
+//splice() works like using scissors to cut out something from an array:
+//First number (bananaIndex): Where to start cutting
+//Second number (1): How many items to cut out
+
     res.status(204).send();
 });
 
