@@ -177,9 +177,9 @@ DELETE http://localhost:3000/api/books/1
 ## Hands-on Exercises
 
 1. **Add Categories**
-   - Add a category field to books
-   - Implement filtering by category (filter array method)
-   - Create an endpoint to list all available categories (foreach array method) 
+   - Add a genre field to books
+   - Implement filtering by genre (filter array method)
+   - Create an endpoint to list all available genre (foreach array method) 
      
 2. **Add Search Functionality**
    - Implement a search endpoint that filters books by title
