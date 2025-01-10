@@ -23,7 +23,7 @@ function Todo() {
     if (todo.trim()) {
       setIsModalOpen(true);
     } else {
-      toast("Enter a todo item.");
+      toast("Enter a tdo item.");
     }
   };
 
