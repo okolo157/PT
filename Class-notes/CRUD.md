@@ -92,6 +92,8 @@ app.get('/api/books', (req, res) => {
 // GET a single book by id
 app.get('/api/books/:id', (req, res) => {
     const book = books.find(b => b.id === parseInt(req.params.id));
+//parseInt() - this makes sure that params.id is a number
+//req.params.id - This is the book number someone is asking for. It comes from the web address (like /api/books/2 - here 2 is the number they want)
     if (!book) return res.status(404).json({ message: 'Book not found' });
     res.json(book);
 });
