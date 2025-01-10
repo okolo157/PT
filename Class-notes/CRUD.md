@@ -182,39 +182,25 @@ DELETE http://localhost:3000/api/books/1
 
 ## Hands-on Exercises
 
-1. **Add Search Functionality**
+1. **Add Categories**
+   - Add a category field to books
+   - Implement filtering by category
+   - Create an endpoint to list all available categories
+     
+2. **Add Search Functionality**
    - Implement a search endpoint that filters books by title
    - Example: GET /api/books/search?title=gatsby
 
-2. **Add Validation**
+3. **Add Validation**
    - Implement validation for book creation and updates
    - Ensure title and author are not empty
    - Return appropriate error messages
 
-3. **Add Categories**
-   - Add a category field to books
-   - Implement filtering by category
-   - Create an endpoint to list all available categories
 
-4. **Implement Pagination**
-   - Add limit and offset parameters to GET /api/books
-   - Return total count of books in response
 
 ## Best Practices
 
-1. **Error Handling**
-```javascript
-// Example error handling middleware
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).json({
-        message: 'Something went wrong!',
-        error: process.env.NODE_ENV === 'development' ? err.message : undefined
-    });
-});
-```
-
-2. **Input Validation**
+1. **Input Validation**
 ```javascript
 function validateBook(req, res, next) {
     const { title, author } = req.body;
@@ -232,7 +218,7 @@ app.post('/api/books', validateBook, (req, res) => {
 });
 ```
 
-3. **HTTP Status Codes**
+2. **HTTP Status Codes**
 - 200: Success
 - 201: Created
 - 204: No Content
@@ -240,30 +226,3 @@ app.post('/api/books', validateBook, (req, res) => {
 - 404: Not Found
 - 500: Internal Server Error
 
-4. **Response Format**
-Maintain consistent response formats:
-```javascript
-// Success response
-{
-    "data": {},
-    "message": "Operation successful"
-}
-
-// Error response
-{
-    "error": "Error message",
-    "details": {} // Optional
-}
-```
-
-## Next Steps
-
-After completing this tutorial and exercises, consider exploring:
-- Database integration (MongoDB, PostgreSQL)
-- User authentication and authorization
-- API documentation (Swagger/OpenAPI)
-- Testing with Jest or Mocha
-- Error handling and logging
-- Deployment strategies
-
-Remember to commit your code regularly and maintain clean, well-documented code throughout the development process.
