@@ -14,12 +14,6 @@
 
 This tutorial builds on your basic Node.js and Express.js knowledge to create a fully functional CRUD (Create, Read, Update, Delete) API. We'll build a simple book management system that demonstrates all four CRUD operations using RESTful principles.
 
-## Prerequisites
-
-- Basic understanding of Node.js and Express.js
-- Node.js installed on your machine
-- A REST client (Thunder Client recommended)
-- Basic understanding of HTTP methods (GET, POST, PUT, DELETE)
 
 ## Project Setup
 
