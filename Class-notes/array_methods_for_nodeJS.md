@@ -111,9 +111,14 @@ console.log(fruits); // ['apple', 'banana', 'cherry']
 
 // For numbers, provide a comparison function
 const numbers = [4, 2, 5, 1, 3];
+
 // Ascending order
 numbers.sort((a, b) => a - b);
 console.log(numbers); // [1, 2, 3, 4, 5]
+
+// Descending order
+numbers.sort((a, b) => b - a);
+console.log(numbers); // [100000, 30, 21, 4, 1]
 ```
 
 ## Practical Examples
