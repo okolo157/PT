@@ -127,7 +127,7 @@ app.delete('/api/books/:id', (req, res) => {
     books.splice(bookIndex, 1);
 
 //splice() works like using scissors to cut out something from an array:
-//First number (bananaIndex): Where to start cutting
+//First number (bookIndex): Where to start cutting
 //Second number (1): How many items to cut out
 
     res.status(204).send();
