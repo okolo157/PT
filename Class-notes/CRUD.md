@@ -176,7 +176,7 @@ DELETE http://localhost:3000/api/books/1
 
 ## Hands-on Exercises
 
-1. **Add Categories**
+1. **Add Genre**
    - Add a genre field to books
    - Implement filtering by genre (filter array method)
    - Create an endpoint to list all available genre (foreach array method) 
