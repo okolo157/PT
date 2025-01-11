@@ -1,4 +1,4 @@
-# The Complete Beginner's Guide to JavaScript
+# Intro to JavaScript
 
 ## Introduction
 Welcome to JavaScript! This guide will help you learn programming with JavaScript from scratch. Don't worry if some concepts seem difficult at first - we'll explain everything step by step.
