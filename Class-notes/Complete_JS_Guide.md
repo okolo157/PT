@@ -1,8 +1,5 @@
 # Intro to JavaScript
 
-## Introduction
-Welcome to JavaScript! This guide will help you learn programming with JavaScript from scratch. Don't worry if some concepts seem difficult at first - we'll explain everything step by step.
-
 ## What is JavaScript?
 JavaScript is a programming language that makes websites interactive. It's like giving instructions to your computer, similar to how you might give directions to a friend. When you click a button, submit a form, or see animations on a website, that's usually JavaScript in action!
 
