@@ -254,8 +254,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json()); //parse the req.body in json format
+app.use(bodyParser.urlencoded({ extended: true })); //parse the url sent in req.body into URL-encoded format, typically used with forms.
 
 // Route for serving the input form
 app.get('/video', (req, res) => {
