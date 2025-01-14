@@ -1,4 +1,4 @@
-# Node.js Class Notes: Asynchronous Programming & Error Handling
+# Node.js Class Notes: Asynchronous Programming
 
 ## 1. Node.js REPL Introduction
 
