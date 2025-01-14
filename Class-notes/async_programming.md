@@ -54,8 +54,6 @@ function displayGreeting(callback) {
 displayGreeting(greet);
 ```
 
-Explanation of the Example:
-
     greet(name): A function that takes a name and prints a greeting.
     displayGreeting(callback): A function that asks for your name using prompt and then calls the callback function with that name.
     displayGreeting(greet): Here, we pass the greet function as the callback.
