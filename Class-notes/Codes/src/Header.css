@@ -1,0 +1,19 @@
+.header-container{
+    display: flex;
+    align-items: center;
+    position: sticky;
+
+}
+
+.second-container{
+    display:flex ;
+    padding: 20px;
+    justify-content: space-evenly;
+    background: url(https://images.unsplash.com/photo-1731432247825-a6630d4ea538?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) rgba(0, 0, 0, 0.178);
+    width: 100%;
+}
+.second-container :hover::before{
+    color:  linear-gradient(90deg, #03a9f4, #f441a5);
+    filter: blur(1.2em);
+    
+}

@@ -1,0 +1,32 @@
+.servicebodys {
+  /* background-color: rgba(255, 255, 255, 0.563); */
+  height: 90vh;
+}
+.secondbody h1 {
+  font-size: x-large;
+  font-weight: bolder;
+  padding: 10px 0px 13px 0px;
+}
+.secondbody {
+  background-color: rgba(255, 255, 255, 0.565);
+  height: 80vh;
+  margin: 20px 200px 30px 200px;
+  padding: 20px 0px 20px 0px;
+  border-radius: 15px;
+}
+
+.groupser {
+  background-color: white;
+  padding: 20px 0px 20px 0px;
+  /* margin: 10px 0px 10px 0px; */
+  border: solid 1px rgba(0, 0, 0, 0.507);
+}
+.groupser:hover {
+  background-color: rgba(165, 42, 42, 0.712);
+  color: white;
+  margin: 10px 0px 10px 0px;
+  border: none;
+}
+.ul {
+  justify-items: left;
+}

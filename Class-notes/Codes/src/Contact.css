@@ -1,0 +1,164 @@
+.Contact-con {
+  /* background-color: rgba(255, 255, 255, 0.517); */
+  height: 100vh;
+  /* margin: 20px 200px 30px 200px; */
+}
+.contact-jun {
+  background-color: rgba(255, 255, 255, 0.603);
+  height: 90vh;
+  margin: 20px 200px 30px 200px;
+  border-radius: 20px;
+  padding: 2px 0px 0px 15px;
+}
+.contact-jun:hover {
+  background-color: rgba(255, 192, 203, 0.488);
+}
+.contact-main {
+  background-color: white;
+  height: 85vh;
+  margin: 20px 17px 20px 14px;
+  /* padding: 15px 0px 0px 15px; */
+  border-radius: 15px;
+  display: flex;
+  flex-direction: rows;
+}
+.contact-info {
+  background-image: url("https://images.unsplash.com/photo-1514782831304-632d84503f6f?q=80&w=1635&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  width: 50%;
+  /* margin-left: 543px; */
+  border-top-right-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.477);
+  background-blend-mode: overlay;
+  background-position: center;
+  background-size: cover;
+  height: 85vh;
+}
+.contact-txt {
+  display: flex;
+  flex-direction: column;
+
+  width: 50%;
+  height: 85vh;
+  color: black;
+}
+.contact-txt h1 {
+  align-items: center;
+  font-weight: bolder;
+  font-size: large;
+  margin-top: 50px;
+}
+.firstbox {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.secondbx {
+  /* padding: 20px; */
+  text-align: left;
+}
+.input-cn {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding: 15px;
+}
+.thirdbx p {
+  font-weight: bold;
+  margin-right: 260px;
+  padding: 15px;
+  text-align: left;
+}
+/* .input-btns {
+  margin-right: 255px;
+} */
+.input {
+  width: 100%;
+  max-width: 220px;
+  height: 45px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1.5px solid lightgrey;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: 0px 0px 20px -18px;
+}
+
+.input:hover {
+  border: 2px solid lightgrey;
+  box-shadow: 0px 0px 20px -17px;
+}
+
+.input:active {
+  transform: scale(0.95);
+}
+
+.input:focus {
+  border: 2px solid grey;
+}
+.input-btns {
+  margin-right: 255px;
+}
+.message-style {
+  width: 500px;
+  height: 100px;
+  margin-left: 15px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1.5px solid lightgrey;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: 0px 0px 20px -18px;
+}
+.send-btn {
+  padding: 20px;
+  /* width: 250px;
+  background-color: blue; */
+}
+.send-btn button {
+  width: 150px;
+  background-color: rgb(244, 244, 246);
+  padding: 15px;
+  border: 1px dotted rgba(0, 0, 0, 0.647);
+  border-radius: 40px;
+}
+.send-btn button:hover {
+  width: 150px;
+  background-color: rgba(73, 73, 205, 0.564);
+  padding: 15px;
+  /* border: 1px dotted rgba(0, 0, 0, 0.647); */
+  border-radius: 20px;
+}
+.main-con {
+  margin-top: 150px;
+}
+.sec-con {
+  /* padding: 15px; */
+  color: white;
+}
+.sec-con p {
+  text-align: left;
+  margin-left: 65px;
+  padding: 10px 0px 5px 5px;
+}
+.class-con {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 15px 0px 5px 5px;
+  color: white;
+  margin-left: 40px;
+  align-items: center;
+}
+
+.class-con h1 {
+  font-size: x-large;
+}
+.sec-cons p {
+  text-align: left;
+  margin-left: 70px;
+  padding: 10px 0px 5px 5px;
+  color: blue;
+}
+.textarea {
+  height: 100px;
+}
