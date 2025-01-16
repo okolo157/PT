@@ -263,53 +263,7 @@ try {
 ```
 
 
-### Error Handling in Express
-
-```
-// Error handling middleware
-function errorHandler(err, req, res, next) {
-    // Log the error
-    console.error(err.message);
-
-    // Handle different types of errors
-    if (err.name === 'ValidationError') {
-        return res.status(400).json({
-            error: 'Validation Failed',
-            message: err.message
-        });
-    }
-
-    // Default server error
-    res.status(500).json({
-        error: 'Something went wrong!',
-        message: err.message
-    });
-}
-
-// Example route with validation
-app.post('/register', async (req, res, next) => {
-    try {
-        // Validate required fields
-        const requiredFields = ['email', 'password', 'name'];
-        for (const field of requiredFields) {
-            if (!req.body[field]) {
-                throw createError('ValidationError', `${field} is required`);
-            }
-        }
-
-        // Create user if validation passes
-        const user = await createUser(req.body);
-        res.json(user);
-    } catch (error) {
-        next(error);
-    }
-});
-
-// Add the error handler last
-app.use(errorHandler);
-```
-
-**Task:**
+### Task:
       Create an express application that includes validation errors. Follow the example provided and ensure the following functionality:
 
     Create the Endpoint:
