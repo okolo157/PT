@@ -159,7 +159,7 @@ sql
 DELETE FROM students WHERE name = 'Charlie';
 
 
-## Task for Students
+## Task:
 
 1. Create a new table called teachers with the following columns:
    * id (Primary Key, Auto Increment)
