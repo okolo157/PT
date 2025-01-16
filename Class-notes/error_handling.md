@@ -264,7 +264,7 @@ try {
 
 
 ### Task:
-      Create an express application that includes validation errors. Follow the example provided and ensure the following functionality:
+    Create an express application that includes validation errors. Follow the example provided and ensure the following functionality:
 
     Create the Endpoint:
         Define a POST /register endpoint.
