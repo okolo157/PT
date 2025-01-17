@@ -1,11 +1,22 @@
 # Getting Started with MongoDB Atlas and Node.js
 
+## Project Structure
+```
+mongodb-project/
+  ├── models/
+  │   └── userModel.js
+  ├── .env
+  ├── package.json
+  └── server.js
+```
+
 ## Setting Up Your Project
 
 First, create a new folder and initialize your Node.js project:
 ```bash
 mkdir mongodb-project
 cd mongodb-project
+mkdir models
 npm init -y
 ```
 
@@ -34,28 +45,13 @@ PORT=3000
 - Handles database connections
 - Makes database operations simpler
 
-## Basic Server Setup
+## Creating the Model
 
-Create a file called `server.js`:
+Create `models/userModel.js`:
 
 ```javascript
-require('dotenv').config();
-const express = require('express');
 const mongoose = require('mongoose');
 
-const app = express();
-app.use(express.json());
-
-mongoose.connect(process.env.MONGODB_URI)
-  .then(() => console.log('Connected to MongoDB'))
-  .catch(err => console.error('MongoDB connection error:', err));
-```
-
-## Creating a Model
-
-In the same file, add a basic user model:
-
-```javascript
 const userSchema = new mongoose.Schema({
   name: String,
   email: String,
@@ -63,14 +59,26 @@ const userSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now }
 });
 
-const User = mongoose.model('User', userSchema);
+module.exports = mongoose.model('User', userSchema);
 ```
 
-## Basic CRUD Operations
+## Basic Server Setup
 
-Add these routes to your `server.js`:
+Create `server.js`:
 
 ```javascript
+require('dotenv').config();
+const express = require('express');
+const mongoose = require('mongoose');
+const User = require('./models/userModel');
+
+const app = express();
+app.use(express.json());
+
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => console.log('Connected to MongoDB'))
+  .catch(err => console.error('MongoDB connection error:', err));
+
 // Create a user
 app.post('/users', async (req, res) => {
   try {
@@ -173,84 +181,3 @@ app.listen(PORT, () => {
 - Method: DELETE
 - URL: http://localhost:3000/users/:id
 - No body needed
-
-
-## Complete Code
-
-Here's the complete `server.js` file:
-
-```javascript
-require('dotenv').config();
-const express = require('express');
-const mongoose = require('mongoose');
-
-const app = express();
-app.use(express.json());
-
-mongoose.connect(process.env.MONGODB_URI)
-  .then(() => console.log('Connected to MongoDB'))
-  .catch(err => console.error('MongoDB connection error:', err));
-
-const userSchema = new mongoose.Schema({
-  name: String,
-  email: String,
-  age: Number,
-  createdAt: { type: Date, default: Date.now }
-});
-
-const User = mongoose.model('User', userSchema);
-
-app.post('/users', async (req, res) => {
-  try {
-    const user = await User.create(req.body);
-    res.json(user);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
-
-app.get('/users', async (req, res) => {
-  try {
-    const users = await User.find();
-    res.json(users);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
-
-app.get('/users/:id', async (req, res) => {
-  try {
-    const user = await User.findById(req.params.id);
-    res.json(user);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
-
-app.put('/users/:id', async (req, res) => {
-  try {
-    const user = await User.findByIdAndUpdate(
-      req.params.id, 
-      req.body,
-      { new: true }
-    );
-    res.json(user);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
-
-app.delete('/users/:id', async (req, res) => {
-  try {
-    await User.findByIdAndDelete(req.params.id);
-    res.json({ message: 'User deleted' });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
-```
