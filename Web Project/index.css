@@ -1,0 +1,58 @@
+.body{
+    font-family: arial, sans-serif;
+    background-color:blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    margin: 0;
+    width: 100vh;
+    margin: 50vh;
+}
+.container{
+    background-color: aqua;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px blue;
+    width: 300px;
+    text-align: center;
+    margin-top: 240px;
+}
+.newcard{
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid brown;
+    border-radius: 3px;
+}
+.add-task{
+    padding: 10px 20px;
+    border: none;
+    background-color:aquamarine;
+    color:red ;
+    border-radius: 3px;
+    cursor: pointer;
+}
+button:hover{
+    background-color:blue;
+}
+.newcard-2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0px;
+    background-color:blue;
+    padding: 20px;
+    width: 80vh;
+    margin-left: 370px;
+    border-radius: 20px;
+    justify-content: space-between;
+}
+.play{
+    list-style-type: none;
+    padding: 10px;
+}
+li{
+    padding: 10px;
+    border-radius: 3px;
+}
