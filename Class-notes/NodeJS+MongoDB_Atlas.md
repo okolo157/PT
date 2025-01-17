@@ -188,3 +188,6 @@ app.listen(PORT, () => {
 - Method: DELETE
 - URL: http://localhost:3000/users/:id
 - No body needed
+
+### Mongoose Queries
+(https://mongoosejs.com/docs/queries.html)
