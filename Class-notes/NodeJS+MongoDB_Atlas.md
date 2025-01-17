@@ -45,6 +45,13 @@ PORT=3000
 - Handles database connections
 - Makes database operations simpler
 
+## Set Up MongoDB Atlas
+
+    Create a MongoDB Atlas account and cluster.
+    Whitelist your IP address (e.g., 0.0.0.0/0 for all IPs during development).
+    Create a database and collection (e.g., database: testDB, collection: users).
+    Get your connection string (e.g., mongodb+srv://<username>:<password>@cluster0.mongodb.net/testDB?retryWrites=true&w=majority).
+
 ## Creating the Model
 
 Create `models/userModel.js`:
