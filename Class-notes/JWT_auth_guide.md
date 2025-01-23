@@ -4,7 +4,8 @@
 
 ### User Interaction (Frontend)
 
-    Step 1: The user interacts with the frontend by entering their login or signup credentials (e.g., username, email, and password) in a form.
+    Step 1: The user interacts with the frontend by entering their login or signup credentials 
+            (e.g., username, email, and password) in a form.
     Step 2: The frontend sends the credentials to the backend through an API request (e.g., via axios, fetch, etc.).
     
     
@@ -23,7 +24,8 @@
             Ensure the username/email is unique.
             Hash the password and save the new user in the database.
 
-    Step 4: If the credentials are valid, the backend generates a JWT using a secret key and includes user-specific information (like id and username) in the payload.
+    Step 4: If the credentials are valid, the backend generates a JWT using a secret key and includes user-specific information (like id and username) in             the payload.
+            
             Example:
 
             const token = jwt.sign({ id: user._id, username: user.username }, SECRET_KEY, { expiresIn: '1h' });
