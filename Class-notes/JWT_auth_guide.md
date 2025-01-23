@@ -75,7 +75,7 @@ Step 5: The backend sends the generated token back to the frontend in the respon
             Step 10: If the token is valid, the backend processes the request (e.g., fetch user data, return protected resources) 
             and sends the response back to the frontend.
 
-###. Displaying Data to the User (Frontend)
+### Displaying Data to the User (Frontend)
 
     Step 11: The frontend receives the response from the backend and displays the data to the user (e.g., showing their profile information or dashboard).
             
@@ -86,14 +86,14 @@ Step 5: The backend sends the generated token back to the frontend in the respon
             });
             setUserData(response.data);
 
-###. Handling Token Expiry
+### Handling Token Expiry
 
     Step 12: If the token is expired, the backend rejects the request (e.g., with a 401 or 403 status).
     Step 13: The frontend should handle this by:
               Redirecting the user to the login page.
               Optionally, refreshing the token if you’re using a refresh token strategy.
 
-###. Logout Process
+### Logout Process
 
     Step 14: When the user logs out, the frontend removes the token from storage and clears the authenticated state.
         Example:
