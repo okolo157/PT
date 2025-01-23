@@ -456,7 +456,6 @@ app.listen(PORT, () => {
       JWT_SECRET=your_very_long_random_secret
 
 ### Dependencies
-      # Backend
       npm init -y
       npm install express mongoose jsonwebtoken cors bcryptjs dotenv
   
