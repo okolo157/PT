@@ -205,6 +205,115 @@ Forms allow users to input data. Each input needs:
 ```
 
 
+## Working with Lists
+
+Lists are fundamental HTML elements that help organize information. HTML provides three types of lists:
+
+### 1. Unordered Lists (ul)
+Use when the order of items doesn't matter:
+
+```html
+<ul>
+    <li>Apples</li>
+    <li>Bananas</li>
+    <li>Oranges</li>
+</ul>
+```
+
+This displays as:
+- Apples
+- Bananas
+- Oranges
+
+### 2. Ordered Lists (ol)
+Use when the sequence matters:
+
+```html
+<ol>
+    <li>First step</li>
+    <li>Second step</li>
+    <li>Third step</li>
+</ol>
+```
+
+You can customize the numbering:
+```html
+<!-- Start from a different number -->
+<ol start="5">
+    <li>Fifth item</li>
+    <li>Sixth item</li>
+</ol>
+
+<!-- Use different numbering styles -->
+<ol type="A">  <!-- A, B, C -->
+    <li>Item A</li>
+    <li>Item B</li>
+</ol>
+
+<ol type="i">  <!-- i, ii, iii -->
+    <li>Item i</li>
+    <li>Item ii</li>
+</ol>
+```
+
+### 3. Description Lists (dl)
+Use for term-definition pairs:
+
+```html
+<dl>
+    <dt>HTML</dt>
+    <dd>HyperText Markup Language - the standard language for creating web pages</dd>
+    
+    <dt>CSS</dt>
+    <dd>Cascading Style Sheets - used for styling web pages</dd>
+</dl>
+```
+
+### Nesting Lists
+Lists can be nested inside other lists:
+
+```html
+<ul>
+    <li>Fruits
+        <ul>
+            <li>Citrus
+                <ul>
+                    <li>Oranges</li>
+                    <li>Lemons</li>
+                </ul>
+            </li>
+            <li>Berries
+                <ul>
+                    <li>Strawberries</li>
+                    <li>Blueberries</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>Vegetables
+        <ul>
+            <li>Root vegetables</li>
+            <li>Leafy greens</li>
+        </ul>
+    </li>
+</ul>
+```
+
+
+### Task
+Create a webpage that includes:
+1. A shopping list using an unordered list
+
+
+
+
+Tips for Working with Lists:
+- Always close your `<li>` tags
+- Use semantic meaning to choose between list types
+- Don't use lists just for indentation (that's what CSS is for)
+- Keep nested lists to a maximum of 3 levels for readability
+
+
 ## Validation and Testing
 
 Before sharing your webpage:
