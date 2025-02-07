@@ -164,7 +164,7 @@ Forms allow users to input data. Each input needs:
 ```
 
 
-#### Tables
+## Tables
 ```html
 <table>
     <thead>
@@ -184,9 +184,8 @@ Forms allow users to input data. Each input needs:
 </table>
 ```
 
-### Advanced Features
 
-#### Media Elements
+## Media Elements
 ```html
 <!-- Video -->
 <video controls width="500">
