@@ -164,6 +164,47 @@ Forms allow users to input data. Each input needs:
 ```
 
 
+#### Tables
+```html
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Location</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>John Doe</td>
+            <td>25</td>
+            <td>New York</td>
+        </tr>
+    </tbody>
+</table>
+```
+
+### Advanced Features
+
+#### Media Elements
+```html
+<!-- Video -->
+<video controls width="500">
+    <source src="video.mp4" type="video/mp4">
+    <source src="video.webm" type="video/webm">
+    Your browser doesn't support video.
+</video>
+
+<!-- Audio -->
+<audio controls>
+    <source src="audio.mp3" type="audio/mpeg">
+    <source src="audio.ogg" type="audio/ogg">
+    Your browser doesn't support audio.
+</audio>
+
+```
+
+
 ## Validation and Testing
 
 Before sharing your webpage:
