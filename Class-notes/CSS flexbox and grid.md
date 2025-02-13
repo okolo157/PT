@@ -58,14 +58,6 @@ The Flexbox layout model provides a more efficient way to lay out, align, and di
     flex-shrink: 1; /* default - can shrink */
     flex-shrink: 0; /* don't shrink */
     
-    /* Base Size */
-    flex-basis: auto;   /* default - use item's size */
-    flex-basis: 200px;  /* specific starting size */
-    
-    /* Shorthand for grow, shrink, and basis */
-    flex: 0 1 auto;     /* default */
-    flex: 1;            /* 1 1 0% - grow and shrink equally */
-    
     /* Individual Alignment */
     align-self: auto;       /* default - follow container */
     align-self: flex-start; /* align to start */
@@ -73,10 +65,6 @@ The Flexbox layout model provides a more efficient way to lay out, align, and di
     align-self: center;     /* align to center */
     align-self: stretch;    /* stretch to fill */
     
-    /* Order */
-    order: 0;    /* default */
-    order: 1;    /* move later in order */
-    order: -1;   /* move earlier in order */
 }
 ```
 
