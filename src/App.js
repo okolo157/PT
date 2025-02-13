@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Todo from "./pages/Todo";
+import Car from "./components/carBrand";
 
 import "./App.css";
 
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route index element={<Home />} />
         <Route path="/home" Component={Home} />
+        <Route path="/brand" Component={Car} />
         <Route path="/about" Component={About} />
         <Route path="/todo" Component={Todo} />
         <Route path="/services" Component={Services} />
