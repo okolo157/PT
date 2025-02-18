@@ -165,15 +165,6 @@ for (let fruit of fruits) {
 }
 ```
 
-### While Loops
-Keep doing something while a condition is true:
-```javascript
-let lives = 3;
-while (lives > 0) {
-    console.log(`You have ${lives} lives left`);
-    lives = lives - 1;
-}
-```
 
 ## 6. Functions - Reusable Code Blocks
 
@@ -200,35 +191,15 @@ function add(a, b) {
 
 // Same thing as an arrow function
 const add = (a, b) => a + b;
+
+// Arrow function with body
+const greet = (name) => {
+    const message = `Hello, ${name}!`;
+    return message;
+};
 ```
 
-## 7. Working with the Webpage (DOM)
 
-### Finding Elements
-```javascript
-// Get an element by its ID
-const title = document.getElementById('main-title');
-
-// Get elements by their class
-const buttons = document.getElementsByClassName('btn');
-
-// Modern way to find elements
-const firstButton = document.querySelector('.btn');
-const allButtons = document.querySelectorAll('.btn');
-```
-
-### Changing Elements
-```javascript
-// Change text
-title.textContent = "New Title";
-
-// Change HTML
-element.innerHTML = "<span>New Content</span>";
-
-// Change styles
-element.style.color = "red";
-element.style.fontSize = "20px";
-```
 
 ### Responding to Events
 ```javascript
@@ -239,7 +210,44 @@ button.addEventListener('click', () => {
 });
 ```
 
-## 8. Modern JavaScript Features
+### Handling Multiple Events
+```const button = document.querySelector('button');
+
+button.addEventListener('click', () => {
+    console.log("Button was clicked!");
+});
+
+button.addEventListener('mouseenter', () => {
+    console.log("Mouse entered the button");
+});
+
+button.addEventListener('mouseleave', () => {
+    console.log("Mouse left the button");
+});
+
+button.addEventListener('dblclick', () => {
+    console.log("Button was double-clicked!");
+});
+```
+
+### Removing an event listener
+
+```const button = document.querySelector('button');
+
+function handleClick() {
+    console.log("Button was clicked!");
+}
+
+button.addEventListener('click', handleClick);
+
+// Remove event listener after 5 seconds
+setTimeout(() => {
+    button.removeEventListener('click', handleClick);
+    console.log("Click event removed");
+}, 5000);
+```
+
+## 7. Modern JavaScript Features
 
 ### Working with Arrays
 ```javascript
@@ -271,7 +279,38 @@ const person = { name: "John", age: 30 };
 const personCopy = { ...person };
 ```
 
-## 9. Handling Errors
+
+### Array methods
+
+```
+const items = [1, 2, 3, 4, 5];
+
+// map: transform elements
+const doubled = items.map(x => x * 2);
+
+// filter: select elements
+const evens = items.filter(x => x % 2 === 0);
+
+// reduce: accumulate values
+const sum = items.reduce((acc, curr) => acc + curr, 0);
+
+// find: get first matching element
+const found = items.find(x => x > 3);
+
+// some/every: test conditions
+const hasEven = items.some(x => x % 2 === 0);
+const allPositive = items.every(x => x > 0);
+
+// sort: arrange elements (ascending)
+items.sort((a, b) => a - b);
+console.log("Sorted Ascending:", items);
+
+// sort: arrange elements (descending)
+items.sort((a, b) => b - a);
+console.log("Sorted Descending:", items);
+```
+
+## 8. Handling Errors
 
 ### Try-Catch Blocks
 Prevent your program from crashing when something goes wrong:
@@ -286,7 +325,7 @@ try {
 }
 ```
 
-## 10. Asynchronous Programming
+## 9. Asynchronous Programming
 
 ### Promises and Async/Await
 For operations that take time (like fetching data from the internet):
